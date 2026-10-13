@@ -1,0 +1,407 @@
+{
+  "decisiones": [
+    {
+      "id": "DEC-001",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "H: constancia de opción o inscripción e identidad corroborada. Vencimiento 29/10/2026 o posterior permite Ok. Sólo se evalúa vencimiento. Si vence antes, detallar intervalo completo. Si no es posible determinar fecha, extraer el intervalo literal tras Vigencia de la presente constancia; si no puede leerse, revisión documental.",
+      "alcance_confirmado": "Sólo regla H/REQ-058. No cambia requisitos temporales de L/M/N. Identidad conforme DEC-006.",
+      "requisitos_afectados": [
+        "REQ-058",
+        "REQ-064",
+        "REQ-066",
+        "REQ-068"
+      ],
+      "hallazgos": [
+        "H-001"
+      ]
+    },
+    {
+      "id": "DEC-002",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Las ocho entidades exigidas deben estar vinculadas a no repetición. Se aceptan cláusulas separadas, renuncia común con lista y las formas Experta/MeCubro confirmadas. Orden indistinto y nombres reordenados admitidos. Personas físicas: DNI y nombre completo aceptados. CUIT presente con nombre truncado: revisión. Mismos criterios para AP y ART.",
+      "alcance_confirmado": "Cláusulas AP/ART, REQ-043–054/061/066. No cambia vigencia ART ni extiende mínimos AP a ART. Identificadores contradictorios siguen revisión, sin prioridad tácita.",
+      "requisitos_afectados": [
+        "REQ-016",
+        "REQ-043",
+        "REQ-044",
+        "REQ-045",
+        "REQ-046",
+        "REQ-047",
+        "REQ-048",
+        "REQ-049",
+        "REQ-050",
+        "REQ-051",
+        "REQ-053",
+        "REQ-054",
+        "REQ-061",
+        "REQ-066"
+      ],
+      "hallazgos": [
+        "H-002",
+        "H-003"
+      ]
+    },
+    {
+      "id": "DEC-003",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "AP tiene dos verificaciones: montos y cláusulas, con identidad corroborada. Sus fechas sólo se informan en K, incluyendo todos los intervalos aunque sean discontinuos y conservando horas/alcance. No fusionar intervalos ni usar falta de continuidad como veto sobre esas dos verificaciones.",
+      "alcance_confirmado": "K/REQ-063 y resultados AP. Ingreso fuera del workflow. Vínculo compatible entre documentos según DEC-005; no cambia fechas ART/L/N.",
+      "requisitos_afectados": [
+        "REQ-016",
+        "REQ-042",
+        "REQ-061",
+        "REQ-062",
+        "REQ-063",
+        "REQ-064"
+      ],
+      "hallazgos": [
+        "H-004"
+      ]
+    },
+    {
+      "id": "DEC-004",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Raíz documental y destino Sheets se configuran localmente, sin IDs en la distribución pública. Formato NOMBRE proveedor-número; una carpeta por proveedor. Normalizar mayúsculas, tildes/Unicode y espacios conservando palabras y número; excepción sin número según configuración.",
+      "alcance_confirmado": "Búsqueda en raíz indicada; no usar destino Sheets como raíz documental. Excepción específica, sin inventar número ni alias. Listado local no verifica Drive.",
+      "requisitos_afectados": [
+        "REQ-012",
+        "REQ-013",
+        "REQ-022",
+        "REQ-023",
+        "REQ-024",
+        "REQ-025",
+        "REQ-026",
+        "REQ-027",
+        "REQ-028"
+      ],
+      "hallazgos": [
+        "H-005"
+      ]
+    },
+    {
+      "id": "DEC-005",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Si aparecen ART y AP, informar ambas y evaluar por separado. Si no aparece ninguna, G = Cobertura no determinada. AP/ART admiten complementar PDF con vínculo de aseguradora, póliza, trabajador, alcance y fechas compatible. Entre varios documentos, aceptar uno válido; excluir expresamente anulados o reemplazados en el alcance evaluado.",
+      "alcance_confirmado": "Reporte documental, no habilitación de ingreso. No transferir evidencia individual a otra persona sólo por compartir póliza. No extender sustitución más allá de su alcance.",
+      "requisitos_afectados": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-017",
+        "REQ-042",
+        "REQ-052",
+        "REQ-055",
+        "REQ-056",
+        "REQ-057",
+        "REQ-060",
+        "REQ-061",
+        "REQ-063",
+        "REQ-065",
+        "REQ-066"
+      ],
+      "hallazgos": [
+        "H-006",
+        "H-014"
+      ]
+    },
+    {
+      "id": "DEC-006",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "DNI puede extraerse del CUIT para cotejar. En H/I se vinculan pago y constancia por mismo CUIT para obtener nombre. Admitir formato y nombres omitidos con mismo DNI. Diferencias parciales nominales con DNI corroborado: aplicar DEC-018, observación en Identificación laboral sin bloqueo del resto. Otras discordancias no aclaradas: Revisar identidad: [detalle], sin Ok en lo afectado. DNI explícito y extraído contradictorios: no elegir automáticamente. Pasaporte u otro identificador se acepta si coincide exactamente con fila, sin recortar/completar. Conservar contextos de repetidos.",
+      "alcance_confirmado": "Identidad del trabajador; no sustituye reglas de entidades de cláusulas ni autoriza contradicciones por omisión nominal. Reutilización de evidencia exige contexto aplicable corroborado.",
+      "requisitos_afectados": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-016",
+        "REQ-018",
+        "REQ-019",
+        "REQ-032",
+        "REQ-033",
+        "REQ-034",
+        "REQ-041",
+        "REQ-052",
+        "REQ-055",
+        "REQ-056",
+        "REQ-057",
+        "REQ-060",
+        "REQ-061",
+        "REQ-063",
+        "REQ-065",
+        "REQ-066",
+        "REQ-058",
+        "REQ-059"
+      ],
+      "hallazgos": [
+        "H-006",
+        "H-008",
+        "H-012"
+      ],
+      "actualizacion": "DEC-018; instrucción general del usuario 2026-10-13"
+    },
+    {
+      "id": "DEC-007",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Reutilizar hoja del proveedor y actualizar lo necesario. Revalidar cambios afectados y sus dependencias; conservar lo independiente comprobado. Conservar filas y contextos sin fusión automática. No copiar resultados por DNI solamente.",
+      "alcance_confirmado": "Política futura. Clave estable, versiones de evidencia, detección de cambios y dependencias necesitan diseño/pruebas. No se modificó Sheets.",
+      "requisitos_afectados": [
+        "REQ-001",
+        "REQ-007",
+        "REQ-009",
+        "REQ-011",
+        "REQ-014",
+        "REQ-015",
+        "REQ-017",
+        "REQ-018",
+        "REQ-029",
+        "REQ-030",
+        "REQ-031",
+        "REQ-032",
+        "REQ-033",
+        "REQ-034",
+        "REQ-035",
+        "REQ-036",
+        "REQ-037",
+        "REQ-038",
+        "REQ-039",
+        "REQ-040",
+        "REQ-041",
+        "REQ-042",
+        "REQ-052",
+        "REQ-055",
+        "REQ-060",
+        "REQ-061",
+        "REQ-063",
+        "REQ-064",
+        "REQ-065",
+        "REQ-066"
+      ],
+      "hallazgos": [
+        "H-007",
+        "H-014",
+        "H-015",
+        "H-016"
+      ]
+    },
+    {
+      "id": "DEC-008",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Ausencia tras búsqueda terminada: Archivo no encontrado. PDF localizado ilegible/incompleto: Revisar documento: [detalle], sin Ok. No aplicable expresamente: celda vacía. Continuar verificaciones independientes y registrar pendientes. Procesamiento termina con resultados documentados y sin fallos técnicos pendientes; no equivale a cumplimiento. El agente puede retomar lo técnicamente pendiente; revisión del usuario queda a cargo del usuario.",
+      "alcance_confirmado": "Procesamiento y salidas documentales. No inferir no aplicabilidad de ausencia. Reintentos futuros no autorizan ejecutar workflow en esta fase.",
+      "requisitos_afectados": [
+        "REQ-001",
+        "REQ-009",
+        "REQ-011",
+        "REQ-014",
+        "REQ-015",
+        "REQ-017",
+        "REQ-018",
+        "REQ-039",
+        "REQ-040",
+        "REQ-041",
+        "REQ-052",
+        "REQ-055",
+        "REQ-058",
+        "REQ-060",
+        "REQ-063",
+        "REQ-064",
+        "REQ-065",
+        "REQ-068"
+      ],
+      "hallazgos": [
+        "H-007",
+        "H-013",
+        "H-015"
+      ]
+    },
+    {
+      "id": "DEC-009",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "I acepta al menos un pago, incluido parcial, de monotributo/autónomo imputado a algún período enero–octubre/2026 inclusive, con identidad corroborada. Sólo importa período abonado; sin corte adicional de fecha de pago. No exigir todos los meses, octubre ni cancelación completa.",
+      "alcance_confirmado": "I/REQ-059. No verifica prima AP ni exige libre deuda global. Salidas de ausencia/revisión según DEC-008.",
+      "requisitos_afectados": [
+        "REQ-059",
+        "REQ-060",
+        "REQ-061",
+        "REQ-062",
+        "REQ-065",
+        "REQ-066",
+        "REQ-067"
+      ],
+      "hallazgos": [
+        "H-010"
+      ]
+    },
+    {
+      "id": "DEC-010",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Sólo informar resultados documentales por columna; autorización de ingreso fuera del workflow. Separar montos AP y cláusulas en dos columnas. Faltantes/no coincidencias de cláusulas AP y ART: falta o no coincide cláusula de no repetición [detalle], sin Ok ni Aprobado parcial. Truncado con CUIT correcto: revisión. Ausencia cifra de invalidez: observación no bloqueante si muerte/gastos cumplen.",
+      "alcance_confirmado": "Negocio y textos confirmados. Nombres/letras físicas de nuevas columnas y otros mensajes exactos de revisión son dependencias de diseño, no decisiones de habilitación.",
+      "requisitos_afectados": [
+        "REQ-001",
+        "REQ-014",
+        "REQ-015",
+        "REQ-017",
+        "REQ-021",
+        "REQ-058",
+        "REQ-059",
+        "REQ-060",
+        "REQ-061",
+        "REQ-062",
+        "REQ-063",
+        "REQ-064",
+        "REQ-065",
+        "REQ-066",
+        "REQ-067",
+        "REQ-068"
+      ],
+      "hallazgos": [
+        "H-010",
+        "H-011",
+        "H-013"
+      ]
+    },
+    {
+      "id": "DEC-011",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Maestro RECURSO_LOCAL_NO_PUBLICADO, Hoja 1, A–F. Excluir encabezados y filas totalmente vacías. Trabajador sin proveedor: revisión, sin heredar anterior. Para originales no cambiados, detalle del validador prevalece sobre resúmenes; decisiones confirmadas de Fase 3 son vigentes.",
+      "alcance_confirmado": "Origen y precedencia. No se abrió ni verificó estructura/permisos del archivo en Google. Índices de filas y detección de encabezados requieren validación posterior.",
+      "requisitos_afectados": [
+        "REQ-007",
+        "REQ-009",
+        "REQ-015",
+        "REQ-016",
+        "REQ-029",
+        "REQ-030",
+        "REQ-031",
+        "REQ-032",
+        "REQ-033",
+        "REQ-034",
+        "REQ-035",
+        "REQ-036",
+        "REQ-037",
+        "REQ-038",
+        "REQ-039",
+        "REQ-040",
+        "REQ-041",
+        "REQ-042",
+        "REQ-061"
+      ],
+      "hallazgos": [
+        "H-009",
+        "H-016"
+      ]
+    },
+    {
+      "id": "DEC-012",
+      "estado": "Confirmada",
+      "respuesta_confirmada": "Muerte >= ARS80.000.000 obligatoria; invalidez sola no reemplaza muerte. Gastos médicos/farmacéuticos >= ARS8.000.000: admitir conjunto y sumar límites separados. Mínimos aplicables a cada trabajador; global ambiguo requiere revisión. $ sin otra moneda indicada se interpreta ARS. Otra moneda explícita: revisión del usuario. Sin cifra de invalidez: observación no bloqueante. Ignorar franquicia en evaluación y salida.",
+      "alcance_confirmado": "Montos AP. No convertir automáticamente moneda ni sumar asistencia ajena al seguro o documentos incompatibles. No restar franquicia.",
+      "requisitos_afectados": [
+        "REQ-016",
+        "REQ-042",
+        "REQ-061"
+      ],
+      "hallazgos": [
+        "H-017"
+      ]
+    },
+    {
+      "id": "DEC-018",
+      "titulo": "Diferencia parcial nominal no bloqueante con DNI corroborado",
+      "estado": "Confirmada por usuario 2026-10-13",
+      "alcance_confirmado": "Regla general DEC-018: una diferencia parcial del nombre, con DNI del trabajador corroborado y coincidente con la fila fuente, se registra únicamente como observación nominal en Identificación laboral (G física), conservando la clasificación laboral y los nombres literales de fuente/documento. No bloquea por sí sola H:O: evaluar cada documento según su identidad, aplicabilidad, vínculos, vigencias y condiciones propias. El DNI debe pertenecer al trabajador, no al tomador/empleador/tercero. CUIT/CUIL puede corroborarlo conforme DEC-006; DNI explícito discordante con DNI central del CUIT permanece bloqueante. No aceptar diferencias totales de identidad, identificadores contradictorios, lectura dudosa o asociaciones insuficientes. No unir pólizas ni copiar resultados por DNI solamente. Conservar la observación y evidencia también en el registro técnico; no repetir la observación nominal en otras columnas ni ocultar incumplimientos independientes. No corregir nombres ni DNI de la fuente.",
+      "requisitos_afectados": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-055",
+        "REQ-058",
+        "REQ-059",
+        "REQ-060"
+      ],
+      "general": true
+    }
+  ],
+  "ampliaciones": [
+    {
+      "id": "DEC-013",
+      "titulo": "Fuente y salida separadas",
+      "estado": "Confirmada en este chat",
+      "alcance_confirmado": "Fuente A–F sólo lectura. Conservar Sheets por proveedor y consolidar datos/resultados en una tabla de salida independiente. Conservar cada ocurrencia/contexto.",
+      "requisitos_afectados": [
+        "REQ-009",
+        "REQ-017",
+        "REQ-020",
+        "REQ-021",
+        "REQ-038",
+        "REQ-041",
+        "REQ-069"
+      ],
+      "fuente": "Conversación de Fase 5, 13/10/2026; no modifica DECISIONES de Fase 3",
+      "limite": "El alcance es paráfrasis contextual; el texto de respuesta_literal es literal. No implica integración probada."
+    },
+    {
+      "id": "DEC-014",
+      "titulo": "Inventario previo y ubicación documental",
+      "estado": "Confirmada en este chat",
+      "alcance_confirmado": "Aceptación a admitir documento fuera de subcarpeta esperada si contenido, identidad y vínculos son válidos, registrando ubicación discordante. Inventariar recursivamente todo el proveedor antes de evaluación; conservar duplicados/ubicaciones y documentos de personas no presentes en fuente.",
+      "requisitos_afectados": [
+        "REQ-014",
+        "REQ-015",
+        "REQ-060",
+        "REQ-065",
+        "REQ-070"
+      ],
+      "fuente": "Conversación de Fase 5, 13/10/2026; no modifica DECISIONES de Fase 3",
+      "limite": "El alcance es paráfrasis contextual; el texto de respuesta_literal es literal. No implica integración probada."
+    },
+    {
+      "id": "DEC-015",
+      "titulo": "Nombre sin identificador",
+      "estado": "Confirmada en este chat",
+      "alcance_confirmado": "Aceptación a usar nombre completo sin identificador sólo para proponer asociación pendiente de corroboración según DEC-006. No es identidad confirmada ni habilita Ok.",
+      "requisitos_afectados": [
+        "REQ-052",
+        "REQ-058",
+        "REQ-059",
+        "REQ-061",
+        "REQ-066",
+        "REQ-071"
+      ],
+      "fuente": "Conversación de Fase 5, 13/10/2026; no modifica DECISIONES de Fase 3",
+      "limite": "El alcance es paráfrasis contextual; el texto de respuesta_literal es literal. No implica integración probada."
+    },
+    {
+      "id": "DEC-016",
+      "titulo": "Trabajo compartido e incremental",
+      "estado": "Confirmada en este chat",
+      "alcance_confirmado": "Acepta propuesta inmediatamente precedente: descarga incremental gestionada, procesamiento local, índice/evidencia/seguimiento compartidos en Drive y publicación por turnos con responsable por corrida. Dos validaciones diarias iniciadas por equipo; sin horarios definidos ni automatización instalada. SQLite sólo caché local reconstruible.",
+      "requisitos_afectados": [
+        "REQ-001",
+        "REQ-011",
+        "REQ-017",
+        "REQ-018",
+        "REQ-027",
+        "REQ-039",
+        "REQ-041",
+        "REQ-072",
+        "REQ-073",
+        "REQ-074"
+      ],
+      "fuente": "Conversación de Fase 5, 13/10/2026; no modifica DECISIONES de Fase 3",
+      "limite": "El alcance es paráfrasis contextual; el texto de respuesta_literal es literal. No implica integración probada."
+    },
+    {
+      "id": "DEC-017",
+      "titulo": "Arquitectura de cuatro piezas",
+      "estado": "Confirmada en este chat",
+      "alcance_confirmado": "Retoma Fase 5 tras propuesta skills + workflow en orquestador, ejecutado por Codex; conservar ORQ/BUS/EXT/VAL. No desplegar agente autónomo propio. Las capacidades externas permanecen pendientes.",
+      "requisitos_afectados": [
+        "REQ-008",
+        "REQ-013",
+        "REQ-015",
+        "REQ-075"
+      ],
+      "fuente": "Conversación de Fase 5, 13/10/2026; no modifica DECISIONES de Fase 3",
+      "limite": "El alcance es paráfrasis contextual; el texto de respuesta_literal es literal. No implica integración probada."
+    }
+  ]
+}

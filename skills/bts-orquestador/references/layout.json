@@ -1,0 +1,33 @@
+{
+  "schema_version": "bts-resultados-2",
+  "business_columns": {
+    "A": "Apellido",
+    "B": "Nombre",
+    "C": "DNI",
+    "D": "Proveedor",
+    "E": "Función",
+    "F": "Accesos"
+  },
+  "logical_to_physical": {
+    "G": "G",
+    "H": "H",
+    "I": "I",
+    "J.montos": "J",
+    "J.clausulas": "K",
+    "K": "L",
+    "L": "M",
+    "M": "N",
+    "N": "O"
+  },
+  "semantic_aliases": {
+    "G": "regimen",
+    "H": "constancia",
+    "I": "pago",
+    "K": "vigencia_ap",
+    "L": "alta",
+    "M": "art",
+    "N": "svo"
+  },
+  "migration": "No inferir versión por número de columnas. Mapear encabezados y consumidores antes de escribir; D-05.",
+  "central": "mismo A:O; UUID, versiones y estado en registro técnico compartido"
+}

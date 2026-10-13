@@ -1,0 +1,147 @@
+{
+  "event_id": "BTS-2026",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "periodo_evento": {
+    "inicio": "2026-10-07",
+    "fin": "2026-10-30"
+  },
+  "h_vencimiento_minimo": "2026-10-29",
+  "i_periodos": [
+    "2026-01",
+    "2026-10"
+  ],
+  "root_documental_id": null,
+  "destino_sheets_id": null,
+  "maestro": {
+    "id": null,
+    "pestana": null,
+    "columnas": "A:F",
+    "tipo_observado": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "fila_inicio": null,
+    "fila_fin": null,
+    "lectura_contenido_verificada": false,
+    "observacion_tipo_fecha": "Configurar y corroborar localmente antes de uso"
+  },
+  "ap": {
+    "minimo_muerte_ARS": 80000000,
+    "minimo_gastos_ARS": 8000000,
+    "fechas_solo_informativas": true,
+    "franquicia": "ignorar evaluacion y salida"
+  },
+  "folder_pattern": "NOMBRE proveedor-número",
+  "excepcion_sin_numero": "UJSA (UNIVERSO PRODUCCIONES)",
+  "propuestas_tecnicas": {
+    "adoptadas": [
+      "PT-001",
+      "PT-002",
+      "PT-003",
+      "PT-004",
+      "PT-005",
+      "PT-006",
+      "PT-007",
+      "PT-008",
+      "PT-009",
+      "PT-010",
+      "PT-011",
+      "PT-012",
+      "PT-013",
+      "PT-014",
+      "PT-015"
+    ],
+    "reintentos_max_por_corrida": 3,
+    "esperas_entre_intentos_segundos": [
+      1,
+      2
+    ],
+    "jitter": true,
+    "respeta_retry_after": true,
+    "persistencia": "journal y snapshots versionados compartidos, D-06/D-12"
+  },
+  "modo_actual": "Distribución pública candidata 0.7.0-rc.1; sin configuración de recursos ni aprobación de producción",
+  "entidades_no_repeticion": [
+    {
+      "req": "REQ-044",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    },
+    {
+      "req": "REQ-045",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    },
+    {
+      "req": "REQ-046",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    },
+    {
+      "req": "REQ-047",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    },
+    {
+      "req": "REQ-048",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    },
+    {
+      "req": "REQ-049",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    },
+    {
+      "req": "REQ-050",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    },
+    {
+      "req": "REQ-051",
+      "nombre": null,
+      "cuit": null,
+      "dni_alternativo_persona_fisica": null
+    }
+  ],
+  "config_version": "bts-2026-candidata-5.1",
+  "source_columns": [
+    "Apellido",
+    "Nombre",
+    "DNI",
+    "Proveedor",
+    "Función",
+    "Accesos"
+  ],
+  "salida_central": {
+    "spreadsheet_id": null,
+    "tab_id": null,
+    "carpeta_id": null,
+    "dependencia": "D-11",
+    "source_read_only": true
+  },
+  "indice_compartido": {
+    "folder_id": null,
+    "control_sheet_id": null,
+    "dependencia": "D-12",
+    "formato": "JSON versionado + Sheet de control",
+    "sqlite": "cache local reconstruible, nunca base multiusuario sincronizada"
+  },
+  "ejecucion": {
+    "inicios": "manual por equipo",
+    "frecuencia_diaria": 2,
+    "horarios": null,
+    "publicacion": "un responsable por corrida",
+    "identidad_responsable": null,
+    "dependencia": "D-13"
+  },
+  "decisiones_source": "decisiones-vigentes.json",
+  "decisiones_sha256": "d7c4ee872017d9fd6223b54bfb5aa78aa9f6646fbeb45a815f94fe6d1747b35e",
+  "layout_source": "layout.json",
+  "layout_sha256": "0477620ad2e919b0a983dbdde17bbca298a5ea9abbb8511c618c7d6b8679214f",
+  "configuracion_local_requerida": true
+}
