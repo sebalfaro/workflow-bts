@@ -57,7 +57,7 @@
     "respeta_retry_after": true,
     "persistencia": "journal y snapshots versionados compartidos, D-06/D-12"
   },
-  "modo_actual": "Distribución pública candidata 0.7.1-rc.1; sin configuración de recursos ni aprobación de producción",
+  "modo_actual": "Distribución pública candidata 0.7.2-rc.1; sin configuración de recursos ni aprobación de producción",
   "entidades_no_repeticion": [
     {
       "req": "REQ-044",

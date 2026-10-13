@@ -1,6 +1,6 @@
 # Workflow BTS 2026
 
-Primera versión pública **0.7.1-rc.1**, rama `develop`. Contrato `bts-5.2`. **Fase 7 PARCIAL; sin aprobación para producción.**
+Versión pública candidata **0.7.2-rc.1**, rama `develop`. Contrato `bts-5.2`. **Fase 7 PARCIAL; sin aprobación para producción.**
 
 Paquete de cuatro skills: orquestador, buscador, extractor y validador. Incluye procedimientos, reglas, contratos JSON y auxiliares Python de comparación. DEC-018 registra diferencias parciales de nombre únicamente en Identificación laboral cuando el DNI está corroborado, sin bloquear otros controles vinculados correctamente.
 
@@ -33,3 +33,11 @@ El repositorio excluye documentación laboral, transcripciones, imágenes, paque
 ## Novedades 0.7.1-rc.1
 
 DEC-019: recuperación dirigida ante lectura insuficiente y Revisar P con referencia documental. Salida central A:P, proveedores A:O; contrato5.2 añade incidencias estructuradas. Consumidores confirmados por usuario. OCR Windows pasa a Fase8 Staging, prueba final previa a producción; todavía pendiente. No se creó una automatización ni un release Windows.
+
+## Aislamiento y modelos 0.7.2-rc.1
+
+Auxiliar ejecutable de contexto por trabajador/proveedor, checkpoint local y rechazo de respuestas cruzadas; selección candidata de modelos y benchmark textual sintético reproducible. Ver [alcance y límites](skills/bts-orquestador/references/contexto-modelos.md). No borra memoria del modelo, no está conectado automáticamente a Sheets y no califica modelos para producción. Las llamadas reales del piloto de evaluación quedaron bloqueadas durante inicialización del CLI, sin respuesta de modelo; no se obtuvo ranking empírico.
+
+Preparación local (no ejecución de modelos): `python3 tools/benchmark_models.py --dry-run --output /private/tmp/bts-eval-nueva-revision`. Para ejecutar en un entorno CLI funcional cambiar a `--execute`; no reutilizar directorio. Datos del corpus inventados, sin documentos laborales.
+
+Prueba local instrumentada: `python3 tools/check_context_isolation.py --output /private/tmp/bts-aislamiento-nueva-revision`. Confirma el límite local y guarda journal/checkpoints; no invoca modelos.

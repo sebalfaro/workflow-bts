@@ -1,3 +1,11 @@
+## 0.7.2-rc.1 — 2026-10-13
+
+- Añade aislamiento operativo local y checkpoint antes de cerrar contextos, con rechazo de referencias cruzadas y grants explícitos para caché neutral.
+- Añade selección candidata y escalamiento acotado de modelos; no habilita writes ni promoción automática.
+- Añade benchmark textual sintético de doce casos y seis modelos candidatos, con procesos nuevos, trazabilidad y guardas de fallo.
+- Pruebas reales de modelos bloqueadas durante inicialización del CLI; sin resultados puntuados, sin benchmark OCR y sin integración nueva del piloto.
+- Mantiene contrato bts-5.2, DEC-018/019, F7 parcial y Windows pendiente en F8.
+
 # Changelog
 
 ## 0.7.1-rc.1 — 2026-10-13

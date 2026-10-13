@@ -1,5 +1,5 @@
 {
-  "version": "0.7.1-rc.1",
+  "version": "0.7.2-rc.1",
   "contract_version": "bts-5.2",
   "phase": 7,
   "phase_status": "PARCIAL",
@@ -10,5 +10,8 @@
   "schema_sha256": "3e7ef198126eee6e5070efbbff3cc50a142930ebd5a4ca1398d4d4234697b0c4",
   "layout_version": "bts-resultados-3",
   "windows_test_phase": 8,
-  "consumer_confirmation": "accepted_by_user_not_automated_test"
+  "consumer_confirmation": "accepted_by_user_not_automated_test",
+  "context_boundary_version": "bts-context-1",
+  "model_evaluation_status": "BACKEND_BLOCKED_NO_SCORED_ANSWERS",
+  "pilot_runtime_integration_verified": false
 }

@@ -1,0 +1,495 @@
+{
+  "version": "bts-benchmark-1",
+  "synthetic_only": true,
+  "modality": "text",
+  "not_ocr_certification": true,
+  "cases": [
+    {
+      "id": "A-hit",
+      "provider": "PROVIDER-A",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000001",
+        "PROVIDER-A",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-A",
+          "source": "SYNTHETIC ONLY: doc-A",
+          "facts": {
+            "identifier": "000001",
+            "hit": true,
+            "corroborated": true,
+            "literal": "EXCLUSIVE_A_MARKER"
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "INCLUDED",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-A"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "B-no-carry",
+      "provider": "PROVIDER-A",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000002",
+        "PROVIDER-A",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [],
+      "search": {
+        "document_present": false,
+        "file_search_complete": false,
+        "coverage_complete": false,
+        "directed_review_complete": true,
+        "negative_corroborated": false,
+        "reading_signals": [
+          "table_disorder"
+        ]
+      },
+      "expected": {
+        "lookup": "TECHNICAL_PENDING",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": []
+      },
+      "excluded_markers": [
+        "EXCLUSIVE_A_MARKER"
+      ]
+    },
+    {
+      "id": "C-provider-switch",
+      "provider": "PROVIDER-B",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000001",
+        "PROVIDER-B",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-C",
+          "source": "SYNTHETIC ONLY: doc-C",
+          "facts": {
+            "identifier": "000001",
+            "hit": false,
+            "corroborated": false
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "VALUE_ABSENT",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-C"
+        ]
+      },
+      "excluded_markers": [
+        "EXCLUSIVE_A_MARKER"
+      ]
+    },
+    {
+      "id": "D-omitted-row",
+      "provider": "PROVIDER-B",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000003",
+        "PROVIDER-B",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-D",
+          "source": "SYNTHETIC ONLY: doc-D",
+          "facts": {
+            "identifier": "000003",
+            "hit": false,
+            "corroborated": false,
+            "literal": "truncated table"
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": false,
+        "directed_review_complete": true,
+        "negative_corroborated": false,
+        "reading_signals": [
+          "table_disorder"
+        ]
+      },
+      "expected": {
+        "lookup": "READING_INCONCLUSIVE",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-D"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "E-missing-file",
+      "provider": "PROVIDER-B",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000004",
+        "PROVIDER-B",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [],
+      "search": {
+        "document_present": false,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "FILE_ABSENT",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": []
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "F-name-partial",
+      "provider": "PROVIDER-B",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000005",
+        "PROVIDER-B",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "identity-F",
+          "source": "SYNTHETIC ONLY: identity-F",
+          "facts": {
+            "identifier": "000005",
+            "hit": true,
+            "corroborated": true,
+            "name_discrepancy": true
+          }
+        },
+        {
+          "id": "payment-F",
+          "source": "SYNTHETIC ONLY: payment-F",
+          "facts": {
+            "identifier": "000005",
+            "hit": true,
+            "corroborated": true,
+            "type": "payment"
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "INCLUDED",
+        "independent_payment": "INCLUDED",
+        "document_ids": [
+          "identity-F",
+          "payment-F"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "G-leading-zero",
+      "provider": "PROVIDER-A",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000006",
+        "PROVIDER-A",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-G",
+          "source": "SYNTHETIC ONLY: doc-G",
+          "facts": {
+            "identifier": "00006",
+            "hit": true,
+            "corroborated": true
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "VALUE_ABSENT",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-G"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "H-id-conflict",
+      "provider": "PROVIDER-A",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000007",
+        "PROVIDER-A",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-H",
+          "source": "SYNTHETIC ONLY: doc-H",
+          "facts": {
+            "identifier": "000007",
+            "alternative_identifier": "000008",
+            "identifier_conflict": true,
+            "hit": true,
+            "corroborated": false
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "IDENTITY_REVIEW",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-H"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "I-independent-payment",
+      "provider": "PROVIDER-A",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000009",
+        "PROVIDER-A",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-I",
+          "source": "SYNTHETIC ONLY: doc-I",
+          "facts": {
+            "identifier": "000009",
+            "hit": false,
+            "corroborated": false
+          }
+        },
+        {
+          "id": "payment-I",
+          "source": "SYNTHETIC ONLY: payment-I",
+          "facts": {
+            "identifier": "000009",
+            "type": "payment",
+            "hit": true,
+            "corroborated": true
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": false,
+        "directed_review_complete": true,
+        "negative_corroborated": false,
+        "reading_signals": [
+          "table_disorder"
+        ]
+      },
+      "expected": {
+        "lookup": "READING_INCONCLUSIVE",
+        "independent_payment": "INCLUDED",
+        "document_ids": [
+          "doc-I",
+          "payment-I"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "J-shared-doc",
+      "provider": "PROVIDER-A",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000010",
+        "PROVIDER-A",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-J",
+          "source": "SYNTHETIC ONLY: doc-J",
+          "facts": {
+            "identifiers": [
+              "000010",
+              "000011"
+            ],
+            "hit": true,
+            "corroborated": true,
+            "type": "collective"
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "INCLUDED",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-J"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "K-unresolved-signal",
+      "provider": "PROVIDER-B",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000012",
+        "PROVIDER-B",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-K",
+          "source": "SYNTHETIC ONLY: doc-K",
+          "facts": {
+            "identifier": "000012",
+            "hit": false,
+            "corroborated": false
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": true,
+        "negative_corroborated": true,
+        "reading_signals": [
+          "unreadable_region"
+        ]
+      },
+      "expected": {
+        "lookup": "READING_INCONCLUSIVE",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-K"
+        ]
+      },
+      "excluded_markers": []
+    },
+    {
+      "id": "L-no-directed-review",
+      "provider": "PROVIDER-B",
+      "source_af": [
+        "Persona",
+        "Sintetica",
+        "000013",
+        "PROVIDER-B",
+        "Funcion",
+        "Acceso"
+      ],
+      "documents": [
+        {
+          "id": "doc-L",
+          "source": "SYNTHETIC ONLY: doc-L",
+          "facts": {
+            "identifier": "000013",
+            "hit": false,
+            "corroborated": false
+          }
+        }
+      ],
+      "search": {
+        "document_present": true,
+        "file_search_complete": true,
+        "coverage_complete": true,
+        "directed_review_complete": false,
+        "negative_corroborated": true,
+        "reading_signals": []
+      },
+      "expected": {
+        "lookup": "READING_INCONCLUSIVE",
+        "independent_payment": "NOT_EVALUATED",
+        "document_ids": [
+          "doc-L"
+        ]
+      },
+      "excluded_markers": []
+    }
+  ]
+}

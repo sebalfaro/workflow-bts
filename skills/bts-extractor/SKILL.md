@@ -5,7 +5,7 @@ description: "Leer la fuente de trabajadores BTS en A–F, conservar filas repet
 
 # bts-extractor
 
-Estado: distribución pública candidata 0.7.1-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
+Estado: distribución pública candidata 0.7.2-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
 
 ## Leer fuente
 
@@ -26,3 +26,5 @@ Planear Sheet por proveedor: ID/carpeta/proveedor literal/esquema; cero compatib
 ## Salida
 
 Entregar rows, exact_provider_groups, excluded_rows, review_rows, identity_reconciliation y persistence_plan con localizadores y hashes. Trabajador nuevo dispara asociación del índice ya existente, incluso documentos SIN_CORRESPONDENCIA_EN_FUENTE. Centralización conserva todas las filas por source_row_id/row_context_id; no la realiza EXT de manera independiente.
+
+Aplicar límites de [contexto/modelos](../bts-orquestador/references/contexto-modelos.md); asociaciones por contexto y ejecución nueva sin historial de otra fila. La caché neutral no contiene dictámenes. Modelos candidatos sin benchmark no se promueven.

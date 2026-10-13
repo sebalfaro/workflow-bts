@@ -5,7 +5,7 @@ description: "Indexar y asociar documentación de trabajadores BTS y evaluar sus
 
 # bts-validador
 
-Estado: distribución pública candidata 0.7.1-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
+Estado: distribución pública candidata 0.7.2-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
 
 ## Recursos y modos
 
@@ -40,3 +40,5 @@ Regla general DEC-018: una diferencia parcial del nombre, con DNI del trabajador
 ### DEC-019 — lectura insuficiente
 
 Aplicar [recuperación y Revisar](../bts-orquestador/references/lectura-insuficiente.md). Mantener review_issue_ids, review_issues y review_output de contrato5.2; no inferir ausencia por OCR negativo dudoso. VAL entrega datos; ORQ publica P central con documento/localizador y relectura.
+
+Aplicar límites de [contexto/modelos](../bts-orquestador/references/contexto-modelos.md); asociaciones por contexto y ejecución nueva sin historial de otra fila. La caché neutral no contiene dictámenes. Modelos candidatos sin benchmark no se promueven.

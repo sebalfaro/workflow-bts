@@ -5,7 +5,7 @@ description: "Coordinar las etapas del workflow documental BTS 2026, sus cambios
 
 # bts-orquestador
 
-Estado: distribución pública candidata 0.7.1-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
+Estado: distribución pública candidata 0.7.2-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
 
 ## Flujo y entrada
 
@@ -29,3 +29,5 @@ Comparaciones mecánicas en [auxiliares](references/auxiliares.md). Aplicar [lay
 ### DEC-019 — lectura insuficiente
 
 Aplicar [recuperación y Revisar](references/lectura-insuficiente.md). Mantener review_issue_ids, review_issues y review_output de contrato5.2; no inferir ausencia por OCR negativo dudoso. VAL entrega datos; ORQ publica P central con documento/localizador y relectura.
+
+Aislamiento instrumentado y evaluación de modelos: [contexto-modelos](references/contexto-modelos.md). Auxiliares y runner sintético disponibles; no asumir integración automática con Sheets ni calificación de modelos.
