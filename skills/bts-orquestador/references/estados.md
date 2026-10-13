@@ -67,3 +67,7 @@ Retiro de fila/documento se registra y vuelve obsoleto el resultado dependiente.
 ## Regla general de observación nominal — DEC-018
 
 Regla general DEC-018: una diferencia parcial del nombre, con DNI del trabajador corroborado y coincidente con la fila fuente, se registra únicamente como observación nominal en Identificación laboral (G física), conservando la clasificación laboral y los nombres literales de fuente/documento. No bloquea por sí sola H:O: evaluar cada documento según su identidad, aplicabilidad, vínculos, vigencias y condiciones propias. El DNI debe pertenecer al trabajador, no al tomador/empleador/tercero. CUIT/CUIL puede corroborarlo conforme DEC-006; DNI explícito discordante con DNI central del CUIT permanece bloqueante. No aceptar diferencias totales de identidad, identificadores contradictorios, lectura dudosa o asociaciones insuficientes. No unir pólizas ni copiar resultados por DNI solamente. Conservar la observación y evidencia también en el registro técnico; no repetir la observación nominal en otras columnas ni ocultar incumplimientos independientes. No corregir nombres ni DNI de la fuente.
+
+## Lectura insuficiente — DEC-019
+
+Revisión activa conserva incidencias y marca histórico dependiente OBSOLETO; no convertir falta de lectura en ausencia. Resolver con nueva evidencia y revalidar consumidores. Incidencias resueltas permanecen en historial y dejan de renderizarse en Revisar; otras activas se conservan.

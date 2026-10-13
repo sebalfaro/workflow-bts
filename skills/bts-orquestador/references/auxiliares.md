@@ -19,3 +19,5 @@
 Cada llamada puede producir InputReview con código. El llamador captura el código y registra revisión de documento/identidad o dependencia de configuración/contrato según causa, sin convertir excepción a False, ausencia o Ok. OSError en file_hash es error técnico. Los booleanos sólo son predicados; VAL debe aportar evidencias de todas condiciones antes de construir un resultado. Nunca utilizar helpers para seleccionar una póliza, inferir vínculo, confirmar cláusula o resolver nombre truncado.
 
 Reglas/config como argumentos: `expiry_at_least(fin, config['h_vencimiento_minimo'])`; I consume `i_periodos`; L/M/N consumen `periodo_evento`; monto consume `str(config['ap']['minimo_muerte_ARS'])` o gasto correspondiente. Valores de hechos son strings, no floats. La configuración no se modifica desde este módulo.
+
+[reading_review.py](../scripts/reading_review.py) separa INCLUDED, VALUE_ABSENT, FILE_ABSENT, READING_INCONCLUSIVE y TECHNICAL_PENDING sobre hechos corroborados y renderiza P por contexto. No realiza OCR, búsqueda ni corroboración; usar [lectura-insuficiente](lectura-insuficiente.md).

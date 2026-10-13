@@ -57,7 +57,7 @@
     "respeta_retry_after": true,
     "persistencia": "journal y snapshots versionados compartidos, D-06/D-12"
   },
-  "modo_actual": "Distribución pública candidata 0.7.0-rc.1; sin configuración de recursos ni aprobación de producción",
+  "modo_actual": "Distribución pública candidata 0.7.1-rc.1; sin configuración de recursos ni aprobación de producción",
   "entidades_no_repeticion": [
     {
       "req": "REQ-044",
@@ -108,7 +108,7 @@
       "dni_alternativo_persona_fisica": null
     }
   ],
-  "config_version": "bts-2026-candidata-5.1",
+  "config_version": "bts-2026-publica-5.2",
   "source_columns": [
     "Apellido",
     "Nombre",
@@ -140,8 +140,14 @@
     "dependencia": "D-13"
   },
   "decisiones_source": "decisiones-vigentes.json",
-  "decisiones_sha256": "d7c4ee872017d9fd6223b54bfb5aa78aa9f6646fbeb45a815f94fe6d1747b35e",
+  "decisiones_sha256": "d5590fd1f7f4d522c1978cb25960d903037f15742c4b083fe6f3ac7f8311d940",
   "layout_source": "layout.json",
-  "layout_sha256": "0477620ad2e919b0a983dbdde17bbca298a5ea9abbb8511c618c7d6b8679214f",
-  "configuracion_local_requerida": true
+  "layout_sha256": "09485392c7223248f076710bb3f68d0d38b068e179b7322c8ecec17e4da1b5fc",
+  "configuracion_local_requerida": true,
+  "staging": {
+    "phase": 8,
+    "final_windows_test_required": true,
+    "windows_verified": false,
+    "production_approved": false
+  }
 }

@@ -26,3 +26,7 @@ Crear/reutilizar salida y Sheets sólo dentro de ejecución operativa autorizada
 Cada destino tiene estado propio. No existe transacción global Drive+Sheets+archivos locales. Avance global requiere recibos de proveedor, central y commit compartido coherentes; cálculo final con revisión no equivale a cumplimiento ni a autorización de ingreso. Reportar totales con denominadores y pendientes por destino.
 
 Si un resultado anterior pasa a OBSOLETO por cambio, no mantenerlo presentado como actual. Publicar estado/aviso vinculado en seguimiento y reporte; si interfaz no permite distinguirlo, bloquear conclusión dependiente como actual (D-09). No convertir un error técnico en vacío NO_APLICABLE ni en Archivo no encontrado.
+
+## Revisar en salida central — DEC-019
+
+Publicar P con incidencias activas de la misma versión/contexto que G:O. Guardar preimagen y revisar valores/tipos/layout de P y nueve controles. Null no borra histórico; incidencias de lectura dejan resultados dependientes obsoletos en seguimiento. Vaciar P sólo tras resolución corroborada y conservando otras incidencias activas. Mantener proveedores A:O salvo autorización explícita de ampliar su esquema. Estado/Motivo se archiva antes de migrar la salida original.

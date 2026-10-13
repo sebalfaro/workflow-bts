@@ -1,4 +1,4 @@
-"""Pure comparison helpers for BTS contract 5.1, candidate revision F6-1. No workflow, writes, OCR or network.
+"""Pure comparison helpers for BTS contract 5.2, candidate revision F6-1. No workflow, writes, OCR or network.
 
 Inputs are already corroborated normalized facts. These helpers do not prove
 identity, applicability, scope, document authenticity, or semantic clauses.
@@ -180,7 +180,7 @@ def compare_readback(expected, observed):
     return canonical_hash(ordered(expected))==canonical_hash(ordered(observed))
 
 def describe():
-    return {'version':'bts-5.1','kind':'pure_helpers','workflow_execution':False,
+    return {'version':'bts-5.2','kind':'pure_helpers','workflow_execution':False,
             'functions':[name for name in ('canonical_hash','file_hash','format_name','provider_candidate','identifier','central_dni','name_candidate','expiry_at_least','period_in_range','interval_covers','amount_at_least','compatible_expense_total','affected_results','compare_readback')],
             'limits':'Predicates only; semantic evidence, scope and actual readback remain caller responsibilities.'}
 

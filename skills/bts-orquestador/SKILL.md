@@ -5,7 +5,7 @@ description: "Coordinar las etapas del workflow documental BTS 2026, sus cambios
 
 # bts-orquestador
 
-Estado: distribución pública candidata 0.7.0-rc.1, contrato bts-5.1; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
+Estado: distribución pública candidata 0.7.1-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
 
 ## Flujo y entrada
 
@@ -25,3 +25,7 @@ Recibir nombre del workflow, etapa operativa e insumos de [contratos](references
 Una capacidad ausente detiene sólo consumidores dependientes según [capacidades](references/capacidades.md). No simular éxito ni pedir al usuario que haga manualmente operaciones que la herramienta sí permite dentro del alcance. Pedir datos/acceso faltantes de forma localizada. Escritura incierta: leer antes de repetir; creación incierta: recuperar por operación/ID, nunca crear otro archivo a ciegas. D-11/D-12 sin configurar permite preparación local, no publicación final. Sin responsable/escritor único comprobable, preparar sin mutar.
 
 Comparaciones mecánicas en [auxiliares](references/auxiliares.md). Aplicar [layout](references/layout.json); G:O es decisión técnica, con claves originales preservadas. Nunca cargar recomendaciones rechazadas de fases anteriores como reglas.
+
+### DEC-019 — lectura insuficiente
+
+Aplicar [recuperación y Revisar](references/lectura-insuficiente.md). Mantener review_issue_ids, review_issues y review_output de contrato5.2; no inferir ausencia por OCR negativo dudoso. VAL entrega datos; ORQ publica P central con documento/localizador y relectura.

@@ -1,0 +1,15 @@
+# Lectura insuficiente y Revisar — DEC-019
+
+No encontrar un valor en texto nativo u OCR no demuestra ausencia documental. Distinguir archivo no localizado tras búsqueda completa, archivo localizado con lectura inconclusa y valor ausente después de cobertura y revisión corroboradas. La confianza OCR alta no demuestra que se hayan leído todas las filas.
+
+Señales de sospecha: páginas sin texto, filas/regiones cortadas, columnas desordenadas, caracteres/identificadores ilegibles, extracción discordante con imagen, nombre candidato cuyo identificador no se puede leer. Registrar método, versión, hash, páginas/regiones y señales; no corregir dígitos por semejanza ni tratar búsqueda aproximada como identidad.
+
+Recuperación dirigida: verificar todas las páginas y continuaciones relevantes; buscar identificador tipado y variantes nominales admitidas como candidatos; reprocesar región con contexto, orientación/resolución adecuadas o contrastar otro extractor disponible; revisar visualmente el original fila por fila con encabezados/columnas y límites de página. Conservar intentos y evidencia; la segunda extracción o revisión visual no prueba éxito por sí sola. Límite de intentos de configuración; agotamiento deja revisión, no ausencia.
+
+Si inclusión se corrobora, evaluar además identidad, vínculo, fechas y condiciones del control. Si negativa se corrobora tras cobertura completa y revisión dirigida del original, registrar VALUE_ABSENT con evidencia, sin llamarlo Archivo no encontrado. Si persiste insuficiencia: resultado afectado REVISION_USUARIO con output_literal=null, review_issue_ids activos y evidencia/dependencias; no autoriza Ok, AUSENTE, NO_APLICABLE ni vaciar el resultado anterior. ORQ marca histórico OBSOLETO en seguimiento y escribe el motivo en P, sin presentarlo como resultado vigente. Si falta acceso/motor, SIN_EVALUAR/ERROR_TECNICO y dependencia; no simular lectura realizada. Continuar controles independientes demostrables.
+
+P tiene encabezado Revisar. VAL devuelve review_issues estructurados (issue_id, contexto, documento ID/nombre literal, localizador conocido o null, claves afectadas, motivo, evidencia y estado). ORQ renderiza una incidencia por línea: `Revisar documento: no se pudo determinar la inclusión por lectura insuficiente — Documento: [nombre] [ID]; [página/sección conocida o no determinada]; validación afectada: [claves]`. No añadir identificadores personales innecesarios ni inventar página/enlace. IDs de incidencias son únicos, contexto y versión deben coincidir. Es campo separado, no décimo resultado documental.
+
+Resolver una incidencia requiere nueva evidencia corroborada y revalidación de sus consumidores; conservar estado RESOLVED en historial. Omitir de P sólo incidencias resueltas, preservando otras activas. Vacío en P significa sin incidencias activas en el alcance evaluado; no certifica transcripción integral. Casos históricos resueltos no se vuelven a marcar como pendientes.
+
+Helper `reading_review.py` clasifica hechos ya corroborados y renderiza incidencias; no lee documentos ni demuestra cobertura. Pruebas sintéticas no equivalen a prueba OCR real.

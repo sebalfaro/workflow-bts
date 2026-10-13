@@ -5,7 +5,7 @@ description: "Indexar y asociar documentación de trabajadores BTS y evaluar sus
 
 # bts-validador
 
-Estado: distribución pública candidata 0.7.0-rc.1, contrato bts-5.1; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
+Estado: distribución pública candidata 0.7.1-rc.1, contrato bts-5.2; Fase 7 PARCIAL y sin aprobación para producción. Leer autoridad/configuración y contratos del orquestador antes de usar el procedimiento. Mantener las cuatro carpetas juntas. Operaciones externas requieren configuración local, autorización y capacidades corroboradas. No contiene evidencia privada ni decide ingreso.
 
 ## Recursos y modos
 
@@ -36,3 +36,7 @@ Liberar contexto activo después de entregar resultado al checkpoint ORQ; sólo 
 ### Actualización general DEC-018
 
 Regla general DEC-018: una diferencia parcial del nombre, con DNI del trabajador corroborado y coincidente con la fila fuente, se registra únicamente como observación nominal en Identificación laboral (G física), conservando la clasificación laboral y los nombres literales de fuente/documento. No bloquea por sí sola H:O: evaluar cada documento según su identidad, aplicabilidad, vínculos, vigencias y condiciones propias. El DNI debe pertenecer al trabajador, no al tomador/empleador/tercero. CUIT/CUIL puede corroborarlo conforme DEC-006; DNI explícito discordante con DNI central del CUIT permanece bloqueante. No aceptar diferencias totales de identidad, identificadores contradictorios, lectura dudosa o asociaciones insuficientes. No unir pólizas ni copiar resultados por DNI solamente. Conservar la observación y evidencia también en el registro técnico; no repetir la observación nominal en otras columnas ni ocultar incumplimientos independientes. No corregir nombres ni DNI de la fuente.
+
+### DEC-019 — lectura insuficiente
+
+Aplicar [recuperación y Revisar](../bts-orquestador/references/lectura-insuficiente.md). Mantener review_issue_ids, review_issues y review_output de contrato5.2; no inferir ausencia por OCR negativo dudoso. VAL entrega datos; ORQ publica P central con documento/localizador y relectura.

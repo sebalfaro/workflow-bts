@@ -1,5 +1,5 @@
 {
-  "schema_version": "bts-resultados-2",
+  "schema_version": "bts-resultados-3",
   "business_columns": {
     "A": "Apellido",
     "B": "Nombre",
@@ -28,6 +28,13 @@
     "M": "art",
     "N": "svo"
   },
-  "migration": "No inferir versión por número de columnas. Mapear encabezados y consumidores antes de escribir; D-05.",
-  "central": "mismo A:O; UUID, versiones y estado en registro técnico compartido"
+  "migration": "Requiere mapping y preimagen; archivar Estado/Motivo antes de sustituir. Consumidores confirmados por usuario; no inferir prueba automática.",
+  "central": "A:F identidad, G:O nueve resultados, P Revisar; registro técnico conserva UUID, evidencia/versiones/estado",
+  "review_column": {
+    "physical": "P",
+    "header": "Revisar",
+    "scope": "central_output",
+    "source": "review_issues",
+    "not_a_business_result": true
+  }
 }

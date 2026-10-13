@@ -1,11 +1,14 @@
 {
-  "version": "0.7.0-rc.1",
-  "contract_version": "bts-5.1",
+  "version": "0.7.1-rc.1",
+  "contract_version": "bts-5.2",
   "phase": 7,
   "phase_status": "PARCIAL",
   "production_approved": false,
   "windows_verified": false,
   "configuration": "public_template_requires_local_resources_and_entities",
-  "rules_sha256": "c971679e9a801011061c405bc0322692c22f8c5aad53a623c1c2238b03b67a84",
-  "schema_sha256": "380764505abc748f940441c1af5147c1ed4c32c8b2351e66737e07ed67ffd5ba"
+  "rules_sha256": "a3be46cc60ef7099e5b23f7943bf39565dcb79c6a883608c0d597ff43b8fa6b4",
+  "schema_sha256": "3e7ef198126eee6e5070efbbff3cc50a142930ebd5a4ca1398d4d4234697b0c4",
+  "layout_version": "bts-resultados-3",
+  "windows_test_phase": 8,
+  "consumer_confirmation": "accepted_by_user_not_automated_test"
 }

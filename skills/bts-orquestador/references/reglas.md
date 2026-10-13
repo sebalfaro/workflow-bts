@@ -1,4 +1,4 @@
-# Reglas ejecutables por el agente — versión candidata 5.1
+# Reglas ejecutables por el agente — versión candidata 5.2
 
 DEC confirmadas prevalecen; para originales no cambiados, detalle de VAL antes del resumen WF (DEC-011). Las claves lógicas preservan el REQ aunque cambie su letra física. PT-002 se adopta técnicamente como layout G:O para candidatas; no se aplicó migración externa. DEC-014 amplía búsqueda a todo el proveedor.
 
@@ -117,3 +117,7 @@ Resultados independientes pueden evaluarse tras terminar el mapeo del alcance di
 ## Regla general de observación nominal — DEC-018
 
 Regla general DEC-018: una diferencia parcial del nombre, con DNI del trabajador corroborado y coincidente con la fila fuente, se registra únicamente como observación nominal en Identificación laboral (G física), conservando la clasificación laboral y los nombres literales de fuente/documento. No bloquea por sí sola H:O: evaluar cada documento según su identidad, aplicabilidad, vínculos, vigencias y condiciones propias. El DNI debe pertenecer al trabajador, no al tomador/empleador/tercero. CUIT/CUIL puede corroborarlo conforme DEC-006; DNI explícito discordante con DNI central del CUIT permanece bloqueante. No aceptar diferencias totales de identidad, identificadores contradictorios, lectura dudosa o asociaciones insuficientes. No unir pólizas ni copiar resultados por DNI solamente. Conservar la observación y evidencia también en el registro técnico; no repetir la observación nominal en otras columnas ni ocultar incumplimientos independientes. No corregir nombres ni DNI de la fuente.
+
+## DEC-019 — lectura insuficiente
+
+Aplicar [lectura-insuficiente.md](lectura-insuficiente.md). Una búsqueda OCR negativa sospechosa no autoriza ausencia ni Archivo no encontrado. P central Revisar identifica documento/localizador y controles afectados; no sustituye G:O.

@@ -318,6 +318,12 @@
         "REQ-060"
       ],
       "general": true
+    },
+    {
+      "id": "DEC-019",
+      "titulo": "Lectura insuficiente y columna Revisar",
+      "estado": "Confirmada por usuario 2026-10-13",
+      "alcance_confirmado": "OCR negativo con sospecha de lectura incompleta es inconcluso, no ausencia. Recuperación dirigida y revisión original; incidencias activas con documento/localizador conocido en Revisar P de salida central. Conservar independientes, historial y referencias; no corregir cifras por semejanza."
     }
   ],
   "ampliaciones": [

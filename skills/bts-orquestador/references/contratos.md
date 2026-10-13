@@ -1,8 +1,8 @@
-# Contratos del paquete BTS — 5.1
+# Contratos del paquete BTS — 5.2
 
 ## Sobre común
 
-Cada solicitud/respuesta incluye component (ORQ, BUS, EXT o VAL) y usa contract_version=bts-5.1, run_id, request_id, event_id, config_hash, ruleset_hash, schema_hash, provider_scope (null sólo antes de agrupar), row_context_id (null para inventario global), authorized_scope y observed_capabilities. Respuesta además: status, data, evidence, errors y dependencies. Usar el [esquema JSON](contratos.schema.json). Rechazar versión/hash/contexto inesperado con CONTRACT_REJECTED; no consumir parcialmente una respuesta de otra fila. null significa desconocido, no ausencia. IDs y montos son cadenas; fechas conservan literal separado de ISO.
+Cada solicitud/respuesta incluye component (ORQ, BUS, EXT o VAL) y usa contract_version=bts-5.2, run_id, request_id, event_id, config_hash, ruleset_hash, schema_hash, provider_scope (null sólo antes de agrupar), row_context_id (null para inventario global), authorized_scope y observed_capabilities. Respuesta además: status, data, evidence, errors y dependencies. Usar el [esquema JSON](contratos.schema.json). Rechazar versión/hash/contexto inesperado con CONTRACT_REJECTED; no consumir parcialmente una respuesta de otra fila. null significa desconocido, no ausencia. IDs y montos son cadenas; fechas conservan literal separado de ISO.
 
 Evidencia tiene ID único, alcance/contexto, archivo/hash o snapshot de inventario, página/localizador, literal, normalización, regla, REQ/DEC, método y fecha observada. Un error contiene code, component, scope, operation, attempt, literal_cause, retryable, next_action, affected_results. Toda salida sin resultado definido requiere error/revisión/dependencia explícita. Listas vacías de documentos sólo representan ausencia cuando completeness=true, incluyendo paginación y clasificación suficiente.
 
@@ -39,3 +39,7 @@ Errores VAL: DOWNLOAD_FAILED, HASH_MISMATCH, OCR_UNAVAILABLE, TEXT_UNREADABLE, I
 Validar esquema; cotejar correlación con solicitud, alcance, hashes y existencia de evidence_ids; rechazar referencias circulares o sin testigo externo que pretendan demostrar identidad. Aristas deben referir hechos/localizadores reales. Una asociación CONFIRMADA requiere evidencia de identidad y vínculo; el esquema sólo comprueba forma, el agente corrobora significado.
 
 Toda operación externa exige capacidad observada para la cuenta/recurso en ese contexto y autorización operativa. D-01–D-15 en [capacidades.md](capacidades.md) localizan impedimentos. Un resultado planeado no genera receipt. El adaptador devuelve valores/tipos e identidad realmente leídos tras la escritura; aplicar [publicacion.md](publicacion.md).
+
+## Contrato 5.2: revisiones de lectura
+
+ColumnResult añade review_issue_ids obligatorio, vacío cuando no hay incidencia activa. VAL evaluate_context añade review_issues y review_output obligatorios; ORQ comprueba referencias/contexto y renderiza P central. Incidencia activa ligada a un resultado impide CUMPLE, AUSENTE y NO_APLICABLE; output_literal=null conserva histórico marcado obsoleto, sin sobrescribirlo como vigente. ReviewIssue conserva documento ID/nombre, localizador conocido o null, claves afectadas, evidencia, motivo y status. Referencias semánticas y correspondencia de review_output requieren comprobación más allá del schema. Clientes 5.1 no deben consumir 5.2 silenciosamente; actualizar todos componentes y hashes juntos.
